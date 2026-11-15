@@ -1,0 +1,80 @@
+:root {
+  --bg: #ffffff;
+  --surface: #fbf7f2;
+  --ink: #3b2a1e;
+  --muted: #7a6554;
+  --line: #e6d9cb;
+  --accent: #8b5a2b;
+  --accent-ink: #ffffff;
+  --tag-bg: #f0e4d6;
+  --tag-ink: #6b4220;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.6;
+}
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+header.site .wrap {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 16px; padding-bottom: 16px; gap: 16px; flex-wrap: wrap;
+}
+.brand { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+nav a { margin-left: 20px; color: var(--muted); text-decoration: none; font-weight: 500; font-size: .95rem; }
+nav a:hover { color: var(--accent); }
+
+.hero { padding: 72px 0 56px; }
+.hero h1 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-size: clamp(2.2rem, 5.5vw, 3.6rem);
+  line-height: 1.12; margin: 0 0 20px; max-width: 18ch; letter-spacing: -0.01em;
+}
+.hero p { font-size: 1.1rem; color: var(--muted); max-width: 60ch; margin: 0 0 28px; }
+.btn {
+  display: inline-block; padding: 11px 20px; border-radius: 6px; font-weight: 600;
+  text-decoration: none; margin-right: 10px; margin-bottom: 10px; font-size: .95rem;
+}
+.btn.primary { background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+.btn:hover { filter: brightness(1.08); }
+
+section { padding: 48px 0; border-top: 1px solid var(--line); }
+h2 { font-family: "Source Serif 4", Georgia, serif; font-size: 1.7rem; margin: 0 0 24px; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.skills li {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 6px;
+  padding: 8px 16px; font-weight: 500;
+}
+
+.projects { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); }
+.project {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+  padding: 22px; display: flex; flex-direction: column;
+}
+.thumb { aspect-ratio: 16/9; margin: -22px -22px 18px; background: var(--tag-bg); border-radius: 8px 8px 0 0; overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: .85rem; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.project h3 { font-family: "Source Serif 4", Georgia, serif; margin: 0 0 8px; font-size: 1.2rem; }
+.project p { margin: 0 0 16px; color: var(--muted); font-size: .95rem; flex: 1; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.tag { background: var(--tag-bg); color: var(--tag-ink); font-size: .8rem; font-weight: 600; padding: 3px 10px; border-radius: 4px; }
+.project .links a { margin-right: 16px; font-weight: 600; font-size: .92rem; }
+
+.about p { max-width: 62ch; color: var(--muted); margin: 0 0 14px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { margin-bottom: 8px; }
+
+footer { padding: 32px 0 48px; color: var(--muted); font-size: .9rem; border-top: 1px solid var(--line); }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
